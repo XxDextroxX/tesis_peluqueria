@@ -25,7 +25,7 @@ class _BodyHomePage extends StatelessWidget {
         children: [
           Positioned(top: size.height * 0, child: WidgetHeader(isLogin: false)),
           Positioned(top: size.height * 0.1, child: _body(size)),
-          Positioned(top: size.height * 0.85, child: _footer(size)),
+          Positioned(top: size.height * 0.86, child: _footer(size)),
         ],
       ),
     );
