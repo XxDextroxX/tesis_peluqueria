@@ -1,4 +1,7 @@
+import 'package:app_peluqueria/src/routes/constant_route.dart';
 import 'package:flutter/material.dart';
+
+import '../widgets/widget_header.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -20,66 +23,9 @@ class _BodyHomePage extends StatelessWidget {
       width: size.width * 1,
       child: Stack(
         children: [
-          Positioned(top: size.height * 0, child: _header(size)),
+          Positioned(top: size.height * 0, child: WidgetHeader(isLogin: false)),
           Positioned(top: size.height * 0.1, child: _body(size)),
           Positioned(top: size.height * 0.85, child: _footer(size)),
-        ],
-      ),
-    );
-  }
-
-  Widget _header(Size size) {
-    return Container(
-      height: size.height * 0.1,
-      width: size.width * 1,
-      color: Colors.black,
-      child: Stack(
-        children: [
-          Positioned(
-              left: size.width * 0.03,
-              top: size.height * 0,
-              child: Container(
-                height: size.height * 0.1,
-                width: size.width * 0.4,
-                child: const Image(
-                  image: AssetImage('assets/img/logo.jpeg'),
-                  fit: BoxFit.contain,
-                ),
-              )),
-          Positioned(
-              left: size.width * 0.5,
-              top: size.height * 0.02,
-              child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  'Registrarse',
-                  style: TextStyle(
-                      fontSize: size.width * 0.035,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
-                ),
-              )),
-          Positioned(
-              left: size.width * 0.71,
-              top: size.height * 0.03,
-              child: Text('|',
-                  style: TextStyle(
-                      fontSize: size.width * 0.06,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white))),
-          Positioned(
-              left: size.width * 0.72,
-              top: size.height * 0.02,
-              child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  'Iniciar Sesión',
-                  style: TextStyle(
-                      fontSize: size.width * 0.035,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
-                ),
-              )),
         ],
       ),
     );
@@ -145,6 +91,7 @@ class _BodyHomePage extends StatelessWidget {
               child: Icon(
                 icon,
                 size: size.width * 0.15,
+                color: const Color(0xFFD4AF37),
               )),
           Positioned(
               top: size.height * 0.11,
@@ -187,6 +134,77 @@ class _BodyHomePage extends StatelessWidget {
       height: size.height * 0.1,
       width: size.width * 1,
       color: Colors.black,
+      child: Stack(
+        children: [
+          Positioned(
+              top: size.height * 0.01,
+              left: size.width * 0.03,
+              child: _text(size, 'Siguenos:')),
+          Positioned(
+              top: size.height * 0.01,
+              left: size.width * 0.4,
+              child: _text(size, '099085065')),
+          Positioned(
+              top: size.height * 0.01,
+              left: size.width * 0.69,
+              child: _text(size, 'alisa@gmail.com')),
+          Positioned(
+            top: size.height * 0.01,
+            left: size.width * 0.03,
+            child: _icon(
+              size,
+              Icons.facebook,
+            ),
+          ),
+          Positioned(
+            top: size.height * 0.01,
+            left: size.width * 0.15,
+            child: _icon(
+              size,
+              Icons.camera_alt_sharp,
+            ),
+          ),
+          Positioned(
+            top: size.height * 0.01,
+            left: size.width * 0.45,
+            child: _icon(
+              size,
+              Icons.whatsapp_sharp,
+            ),
+          ),
+          Positioned(
+            top: size.height * 0.01,
+            left: size.width * 0.75,
+            child: _icon(
+              size,
+              Icons.email,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _text(Size size, String text) {
+    return Text(
+      text,
+      style: TextStyle(
+          color: const Color(0xFFD4AF37),
+          fontSize: size.width * 0.035,
+          fontWeight: FontWeight.bold),
+    );
+  }
+
+  //icon
+  Widget _icon(Size size, IconData icon) {
+    return Container(
+      height: size.height * 0.1,
+      width: size.width * 0.1,
+      child: Icon(
+        icon,
+        size: size.width * 0.1,
+        color: const Color(0xFFD4AF37),
+      ),
     );
   }
 }
