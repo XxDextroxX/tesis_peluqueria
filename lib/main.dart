@@ -1,5 +1,6 @@
 import 'package:app_peluqueria/src/routes/constant_route.dart';
 import 'package:app_peluqueria/src/routes/routes.dart';
+import 'package:app_peluqueria/src/widgets/widget_map.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
