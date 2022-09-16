@@ -35,41 +35,58 @@ class _BodyHomePage extends StatelessWidget {
     return Container(
       height: size.height * 0.75,
       width: size.width * 1,
-      child: Stack(
+      child: ListView(
         children: [
-          Positioned(
-              top: size.height * 0.07,
-              left: size.width * 0.3,
-              child: Text(
-                '¿Qué ofrecemos ?',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: size.width * 0.05,
-                    fontWeight: FontWeight.bold),
-              )),
-          Positioned(
-              top: size.height * 0.15,
-              left: size.width * 0.05,
-              child: _information(size, Icons.calendar_month, 'Agendar citas',
-                  'Admimistre y acepte facilmente las reservas en linea')),
-          Positioned(
-              top: size.height * 0.15,
-              left: size.width * 0.52,
-              child: _information(
-                  size,
-                  Icons.notifications,
-                  'Recordatorio de citas',
-                  'Recibira notificaciones de citas programadas')),
-          Positioned(
-              top: size.height * 0.45,
-              left: size.width * 0.05,
-              child: _information(size, Icons.shopping_cart,
-                  'Venta de productos', 'Registro de compra de sus productos')),
-          Positioned(
-              top: size.height * 0.45,
-              left: size.width * 0.52,
-              child: _information(size, Icons.dry, 'Tratamientos capilares',
-                  'Registro de tratamientos capilares')),
+          Container(
+            height: size.height * 0.57,
+            width: size.width * 1,
+            child: Stack(
+              children: [
+                Positioned(
+                    top: size.height * 0.02,
+                    left: size.width * 0.3,
+                    child: Text(
+                      '¿Qué ofrecemos ?',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: size.width * 0.05,
+                          fontWeight: FontWeight.bold),
+                    )),
+                Positioned(
+                    top: size.height * 0.08,
+                    left: size.width * 0.07,
+                    child: _information(
+                        size,
+                        Icons.calendar_month,
+                        'Agendar citas',
+                        'Admimistre y acepte facilmente las reservas en linea')),
+                Positioned(
+                    top: size.height * 0.08,
+                    left: size.width * 0.52,
+                    child: _information(
+                        size,
+                        Icons.notifications,
+                        'Recordatorio de citas',
+                        'Recibira notificaciones de citas programadas')),
+                Positioned(
+                    top: size.height * 0.33,
+                    left: size.width * 0.07,
+                    child: _information(
+                        size,
+                        Icons.shopping_cart,
+                        'Venta de productos',
+                        'Registro de compra de sus productos')),
+                Positioned(
+                    top: size.height * 0.33,
+                    left: size.width * 0.52,
+                    child: _information(
+                        size,
+                        Icons.dry,
+                        'Tratamientos capilares',
+                        'Registro de tratamientos capilares')),
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -143,7 +160,7 @@ class _BodyHomePage extends StatelessWidget {
           Positioned(
               top: size.height * 0.01,
               left: size.width * 0.4,
-              child: _text(size, '099085065')),
+              child: _text(size, 'Contactanos')),
           Positioned(
               top: size.height * 0.01,
               left: size.width * 0.69,
